@@ -11,7 +11,12 @@ permissions:
 
 jobs:
   test-macOS:
-    runs-on: [self-hosted, ase]
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ase]
+        jobs: [1, 2, 3]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
         with:
