@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [self-hosted, ase]
+        os: [ase]
         jobs: [1, 2, 3]
     runs-on: ${{ matrix.os }}
     steps:
